@@ -55,5 +55,5 @@ plot(X(2,:))
 hold on
 plot(predX(2,:))
 legend('Actual', 'Predicted')
-
+%% try PCA on ideal model 
 
