@@ -19,7 +19,7 @@ X=normpdf((0:dt:T),mu,sigma);
 % X = randn(2, length(time_array));
 % X = filtfilt(b,a,X')';
 
-X = X + 0.01*randn(size(X));
+X = X + 0.001*randn(size(X));
 %X = awgn(X,10,'measured');
 % %rows 3 and 4, velocity of movement in 2 dims
 % X = [X;[diff(X,1,2),[0;0]]];
@@ -28,12 +28,13 @@ X = [X;[diff(X,2),[0,0]]];
 %Y - tuned firing rates of N neurons
 pos_tuning = 2*pi*rand(N,1);
 vel_tuning = 2*pi*rand(N,1);
-tuning = [cos(pos_tuning), sin(pos_tuning), cos(vel_tuning), sin(vel_tuning)];
-
-Y = tuning(:,1)*X(1,:) + tuning(:,2)*X(2,:) + tuning(:,3)*X(3,:) + tuning(:,4)*X(4,:);
+%tuning = [cos(pos_tuning), sin(pos_tuning), cos(vel_tuning), sin(vel_tuning)];
+tuning = [pos_tuning vel_tuning];
+% Y = tuning(:,1)*X(1,:) + tuning(:,2)*X(2,:) + tuning(:,3)*X(3,:) + tuning(:,4)*X(4,:);
+Y = tuning(:,1)*X(1,:) + tuning(:,2)*X(2,:); 
 Y = Y + 0.1*randn(size(Y));
 
-
+figure;plot(Y')
 
 %%Create Kalman
 [A,C,Q,W,P_0] = create_kalman(X,Y,dt);
