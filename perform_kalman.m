@@ -8,7 +8,7 @@ P = P_0;
 for t = 2:size(Y,2)
     
 %Calculate Kalman gain K
-prior_P = A*P*A + W;
+prior_P = A*P*A' + W;
 S = C*prior_P*C' + Q;
 K = prior_P*C'*inv(S);
 
