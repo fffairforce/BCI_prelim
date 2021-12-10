@@ -57,4 +57,7 @@ hold on
 plot(predX(2,:))
 legend('Actual', 'Predicted')
 %% try PCA on ideal model 
+[coeff,score,latent,~,~,mu] = pca(Y');
+
+figure; plot(latent)
 
