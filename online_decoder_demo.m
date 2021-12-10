@@ -26,10 +26,8 @@ Xtprev = Xt;
 Xtoutprev = Xtout;
 % Normal Update
 Ct = C(1:length(ch),:);
-CtQinvT = CtQinv(:,1:length(ch));
 Wt = W;
 At = A;
-CtQinvCT = CtQinvC;
 
 % Predict:
 Xt = At*Xt;                 % prediction from previous state
@@ -40,7 +38,7 @@ Kt = Pj*C'/(C*Pj*C' + Q);
 %Kt = (eye(size(prior_P))+prior_P*CtQinvCT)\prior_P*CtQinvT;
 Y_error = Y(:,t) - C*predX(:,t-1);
 Xt = Xt + Kt*Y_error;      % correct prediction   (double(lags(chans,binLag+1)) - Ct*Xt)
-Pj = (eye(size(prior_P)) - Kt*Ct)*prior_P;                        % Update movement covariance matrix
+Pj = (eye(size(A1,1)) - Kt*Ct)*prior_P;                        % Update movement covariance matrix
 
 %current state position = position + velocity*dt 
 %% online decoder2:Multistate Decoder
