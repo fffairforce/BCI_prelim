@@ -8,18 +8,7 @@
 
 % use simulink for data intake?
 
-%Inputs:        X:			Neural data of size [t, N], where t is the
-%							number of binned samples and neu is the number
-%							of SBP channels.
-%				y:			Behavioral data of size [t, b], where t is the
-%							number of binned samples and b is the
-%							dimensionality of behavior. This code assumes
-%							the order [position, velocity], where for
-%							multidimensional filters, all positions should
-%							appear prior to all velocities.
-%				binsize:	(optional) The size of the accumulation period,
-%							in ms. This defaults to 32.
-%
+%input:
 % initialize-from create kalman
 % set initial states
 % W
