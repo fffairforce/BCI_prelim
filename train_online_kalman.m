@@ -1,5 +1,5 @@
 % create Kalman parameters
-function [A,C,Q,W,P_0] = create_kalman(X,Y,dt)
+function [A,C,Q,W,P_0] = train_online_kalman(X,Y,dt)
 % This function trains our online SBP Kalman filter.
 %	Inputs:		X:			Behavioral data of size [t, b], where t is the
 %							number of binned samples and b is the
