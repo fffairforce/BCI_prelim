@@ -2,6 +2,8 @@
 % .rec take in(asuming SBP,sampled 100Hz)
 % UDP message read and write
 %data=readdata
+[udpMessage, udpLocation] = createUDPMessage(AngleNames);%AngleNames-what does that refer to?
+
 %toy data for test
 T = 5; %s
 dt = 0.01;  %Time step, 10 ms
@@ -60,7 +62,7 @@ end
 
 % output cursor position 
 predPos = predX(1:2,:);
-
+sendUDPMessage(udpMessage, udpLocation,angles)
 
 %functions to use
 function [udpMessage, udpLocation] = createUDPMessage(AngleNames)
