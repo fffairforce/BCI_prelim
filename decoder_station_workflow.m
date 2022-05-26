@@ -3,6 +3,7 @@
 % UDP message read and write
 %data=readdata
 [udpMessage, udpLocation] = createUDPMessage(AngleNames);%AngleNames-what does that refer to?
+%calculate FR
 
 %toy data for test
 T = 5; %s
@@ -41,6 +42,7 @@ YY = [Y,YS];
 
 % decode in realtime-assuming KF training done
 load("KF_para_test.mat")
+sw=301;
 predX = zeros(size(A,1), size(YY(:,1:sw),2));
 X_0(1:5,1) = XX(1:5,1);
 P=P_0;
@@ -63,8 +65,10 @@ end
 % output cursor position 
 predPos = predX(1:2,:);
 sendUDPMessage(udpMessage, udpLocation,angles)
+% u=udpport;
+% write(u,data(cursorPos),destinationAddress,destinationPort)
 
-%functions to use
+%% functions to use
 function [udpMessage, udpLocation] = createUDPMessage(AngleNames)
 %read angle value & location 
 feature_counter = 0;
