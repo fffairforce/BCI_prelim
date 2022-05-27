@@ -39,6 +39,9 @@ YS = YS + 2*randn(size(YS));
 %set movement switch onset at tp 300
 XX = [X,XS];
 YY = [Y,YS];
+%Classifier
+
+%training KF parameters
 
 % decode in realtime-assuming KF training done
 load("KF_para_test.mat")
@@ -48,44 +51,34 @@ X_0(1:5,1) = XX(1:5,1);
 P=P_0;
 predX(:,1) = X_0;
 K = zeros(size(W,1), size(Q,1), size(YY(:,1:sw),2));
-for t = 2:size(YY(:,1:sw),2)   
-    %Calculate Kalman gain K
-    prior_P = A*P*A' + W;
-    S = C*prior_P*C' + Q;%state
-    K(:,:,t) = prior_P*C'*inv(S);%gain
-     %Update movement covariance matrix
-    P = (eye(size(A,1)) - K(:,:,t)*C)*prior_P;
-end
-for t = 2:size(YY(:,1:sw),2) 
-    %Use current firing rates to estimate next movement
-    YY_error = YY(:,t) - C*predX(:,t-1);
-    predX(:,t) = predX(:,t-1) + K(:,:,t)*YY_error;%estimated position/velocity
-end
+neurFreq_counter = 0;
+time_array = zeros(10000,1);
+tic;
+Keepgoing = 1;
+while Keepgoing
+    curr_time =toc;
+    if (curr_time > next_tme_targ)
+%         rawNeuronFreqs = recieveSBP('read_.rec');
+%         neuronFreqs = (rawNeuronFreqs-unitMeans);
+        neuronFreqs = YY(:,curr_time_idx);
+        neurFreq_counter = neurFreq_counter+1;
+        time_array(neurFreq_counter) = toc;
+        
+        %Calculate Kalman gain K
+        prior_P = A*P*A' + W;
+        S = C*prior_P*C' + Q;%state
+        K(:,:,t) = prior_P*C'*inv(S);%gain
+         %Update movement covariance matrix
+        P = (eye(size(A,1)) - K(:,:,t)*C)*prior_P;
+        %Use current firing rates to estimate next movement
+        YY_error = YY(:,t) - C*predX(:,t-1);
+        predX(:,t) = predX(:,t-1) + K(:,:,t)*YY_error;%estimated position/velocity
 
 % output cursor position 
-predPos = predX(1:2,:);
-sendUDPMessage(udpMessage, udpLocation,angles)
-% u=udpport;
-% write(u,data(cursorPos),destinationAddress,destinationPort)
-
+predPos = predX(1:2,1);
+destinationAddress = '0.0.0.0';
+destinationPort = 64625;
+u=udpport;
+write(u,predPos,destinationAddress,destinationPort)
+data = read(u,u.NumBytesWritten,"uint8")
 %% functions to use
-function [udpMessage, udpLocation] = createUDPMessage(AngleNames)
-%read angle value & location 
-feature_counter = 0;
-counter = 2;
-udpLocation = zeros(1,length(AngleNames));
-udpMessage(counter:(counter+1)) = uint8('motor.compType');%assign components into UDP 
-counter = counter+2;
-end
-
-function sendUDPMessage(udpMessage, udpLocation,angles)
-
-for j = 1:length(angles)
-    featValBytes = typecast(single(angles(j)),'uint8');
-    %Convert to big endian if necessary
-    if udpLocation(j)~=0
-        udpMessage(udpLocation(j) + (0:3)) = featValBytes;
-    end
-end
-fwrite(udpMessage);
-end
