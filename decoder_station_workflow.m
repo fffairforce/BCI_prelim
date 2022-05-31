@@ -2,7 +2,7 @@
 % .rec take in(asuming SBP,sampled 100Hz)
 % UDP message read and write
 %data=readdata
-[udpMessage, udpLocation] = createUDPMessage(AngleNames);%AngleNames-what does that refer to?
+
 %calculate FR
 
 %toy data for test
@@ -53,18 +53,32 @@ predX(:,1) = X_0;
 K = zeros(size(W,1), size(Q,1), size(YY(:,1:sw),2));
 neurFreq_counter = 0;
 time_array = zeros(10000,1);
+next_tme_targ = dt; %s
+segment = 0; % Initialize segment variable, keeps track of where in trial setup the monkey is
 tic;
 Keepgoing = 1;
 while Keepgoing
     curr_time =toc;
     if (curr_time > next_tme_targ)
+        %Count the number of time steps
+        missed_bins = floor((curr_time - next_tme_targ)./dt);
+        if missed_bins>-1
+        next_targ = next_targ + (missed_bins+1)*time_step;  %The next time target calculated, always in whole time steps
+        end
+        
+        %For debugging
+        if missed_bins>2
+            display(num2str(segment))
+        end
 %         rawNeuronFreqs = recieveSBP('read_.rec');
 %         neuronFreqs = (rawNeuronFreqs-unitMeans);
+        curr_time_idx = missed_bins;%this or 1,2,3...      
         neuronFreqs = YY(:,curr_time_idx);
         neurFreq_counter = neurFreq_counter+1;
         time_array(neurFreq_counter) = toc;
         
-        %Calculate Kalman gain K
+        %calculate score - Calculate Kalman gain K
+        %movement state classifier then feed in different KF parameters
         prior_P = A*P*A' + W;
         S = C*prior_P*C' + Q;%state
         K(:,:,t) = prior_P*C'*inv(S);%gain
@@ -73,11 +87,14 @@ while Keepgoing
         %Use current firing rates to estimate next movement
         YY_error = YY(:,t) - C*predX(:,t-1);
         predX(:,t) = predX(:,t-1) + K(:,:,t)*YY_error;%estimated position/velocity
+
+        %store score
+        score_matrix(neurFreq_counter,:) = predX;
     end
 end
 % output cursor position 
 predPos = predX(1:2,1);
-destinationAddress = '0.0.0.0';
+destinationAddress = '10.52.14.13';
 destinationPort = 64625;
 u=udpport;
 write(u,predPos,destinationAddress,destinationPort)
