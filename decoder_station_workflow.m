@@ -73,7 +73,8 @@ while Keepgoing
         %Use current firing rates to estimate next movement
         YY_error = YY(:,t) - C*predX(:,t-1);
         predX(:,t) = predX(:,t-1) + K(:,:,t)*YY_error;%estimated position/velocity
-
+    end
+end
 % output cursor position 
 predPos = predX(1:2,1);
 destinationAddress = '0.0.0.0';
