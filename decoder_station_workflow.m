@@ -95,8 +95,29 @@ end
 % output cursor position 
 predPos = predX(1:2,1);
 destinationAddress = '10.52.14.13';
-destinationPort = 64625;
+destinationPort = 64713;
 u=udpport;
 write(u,predPos,destinationAddress,destinationPort)
 data = read(u,u.NumBytesWritten,"uint8")
+
+%legacy version to test
+ipA = '10.31.75.173'; portA = 3030;
+ipB = '10.52.14.13';  portB = 3031;  % Modify these values to be those of your second computer.
+%%Create UDP Object
+udpA = udp(ipB,portB,'LocalPort',portA);
+udpA = udp(ipA,portA,'LocalPort',portA);
+%%Connect to UDP Object
+fopen(udpA)
+
+fprintf(udpA,'This is test message number one.')
+fprintf(udpA,'This is test message number two.')
+fprintf(udpA,'doremifasolatido')
+fscanf(udpA)
+
+uBroadcaster = udpport("datagram")
+uBroadcaster.EnableBroadcast = true;
+uReceiver1 = udpport("byte","LocalPort",2020,"EnablePortSharing",true)
+write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
+uReceiver1Count = uReceiver1.NumBytesAvailable
+data1 = read(uReceiver1,uReceiver1Count,"uint8")
 %% functions to use
