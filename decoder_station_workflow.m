@@ -101,17 +101,22 @@ write(u,predPos,destinationAddress,destinationPort)
 data = read(u,u.NumBytesWritten,"uint8")
 
 %legacy version to test
-ipA = '10.31.75.173'; portA = 3030;
+ipA = '192.168.1.204'; portA = 3030;
 ipB = '10.52.14.13';  portB = 3031;  % Modify these values to be those of your second computer.
+ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
-udpA = udp(ipB,portB,'LocalPort',portA);
-udpA = udp(ipA,portA,'LocalPort',portA);
+% udpA = udp(ipB,portB,'LocalPort',portA);
+udpA = udp(ipA,portA,'LocalPort',portC);
+udpC = udp(ipC,portC,'LocalPort',portA);
+
 %%Connect to UDP Object
 fopen(udpA)
+fopen(udpC)
 
-fprintf(udpA,'This is test message number one.')
+fprintf(udpC,'This is test message number one.')
 fprintf(udpA,'This is test message number two.')
-fprintf(udpA,'doremifasolatido')
+fprintf(udpC,'doremifasolatido')
+fscanf(udpC)
 fscanf(udpA)
 
 uBroadcaster = udpport("datagram")
