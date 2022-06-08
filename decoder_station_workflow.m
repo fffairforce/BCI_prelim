@@ -107,7 +107,7 @@ ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
 % udpA = udp(ipB,portB,'LocalPort',portA);
 udpA = udp(ipA,portA,'LocalPort',portC);
-udpC = udp(ipC,portC,'LocalPort',portA);
+% udpC = udp(ipC,portC,'LocalPort',portA);
 
 %%Connect to UDP Object
 fopen(udpA)
@@ -119,10 +119,11 @@ fprintf(udpC,'doremifasolatido')
 fscanf(udpC)
 fscanf(udpA)
 
-uBroadcaster = udpport("datagram")
+%need to fix
+uBroadcaster = udpport("LocalHost",ipC)%,"LocalPort",portC
 uBroadcaster.EnableBroadcast = true;
-uReceiver1 = udpport("byte","LocalPort",2020,"EnablePortSharing",true)
-write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
+uReceiver1 = udpport("byte","LocalHost",ipC,"LocalPort",2020,"EnablePortSharing",true)
+write(uBroadcaster,1:5,"uint8",ipC,49325);%10.31.79.255 10.52.14.255
 uReceiver1Count = uReceiver1.NumBytesAvailable
 data1 = read(uReceiver1,uReceiver1Count,"uint8")
 %% functions to use
