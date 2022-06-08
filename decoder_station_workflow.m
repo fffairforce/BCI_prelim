@@ -93,7 +93,7 @@ while Keepgoing
     end
 end
 % output cursor position 
-predPos = predX(1:2,1);
+predPos = predX(1:2,1:10);predPos=reshape(predPos,[],1);
 destinationAddress = '10.52.14.13';
 destinationPort = 64713;
 u=udpport;
@@ -101,29 +101,31 @@ write(u,predPos,destinationAddress,destinationPort)
 data = read(u,u.NumBytesWritten,"uint8")
 
 %legacy version to test
-ipA = '192.168.1.204'; portA = 3030;
-ipB = '10.52.14.13';  portB = 3031;  % Modify these values to be those of your second computer.
+ipA = '10.31.75.212'; portA = 3030;
+ipB = '192.168.11.2';  portB = 3031;  % Modify these values to be those of your second computer.
 ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
-% udpA = udp(ipB,portB,'LocalPort',portA);
-udpA = udp(ipA,portA,'LocalPort',portC);
-% udpC = udp(ipC,portC,'LocalPort',portA);
+udpB = udp(ipB,portB,'LocalPort',portA);
+% udpA = udp(ipA,portA,'LocalPort',portC);
+udpC = udp(ipA,portA,'LocalPort',portB);
 
 %%Connect to UDP Object
+fopen(udpB)
 fopen(udpA)
 fopen(udpC)
 
 fprintf(udpC,'This is test message number one.')
 fprintf(udpA,'This is test message number two.')
-fprintf(udpC,'doremifasolatido')
-fscanf(udpC)
+fprintf(udpB,'doremifasolatido')
 fscanf(udpA)
+fscanf(udpB)
+fscanf(udpC)
 
-%need to fix
-uBroadcaster = udpport("LocalHost",ipC)%,"LocalPort",portC
+%use this version of udpport
+uBroadcaster = udpport("LocalHost",ipB,"LocalPort",portC)%
 uBroadcaster.EnableBroadcast = true;
-uReceiver1 = udpport("byte","LocalHost",ipC,"LocalPort",2020,"EnablePortSharing",true)
-write(uBroadcaster,1:5,"uint8",ipC,49325);%10.31.79.255 10.52.14.255
+uReceiver1 = udpport("byte","LocalHost",ipB,"EnablePortSharing",true)%,"LocalPort",portC
+write(uBroadcaster,predPos,"uint8",ipA,2020);%10.31.79.255 10.52.14.255
 uReceiver1Count = uReceiver1.NumBytesAvailable
 data1 = read(uReceiver1,uReceiver1Count,"uint8")
 %% functions to use
