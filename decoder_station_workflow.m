@@ -53,17 +53,17 @@ predX(:,1) = X_0;
 K = zeros(size(W,1), size(Q,1), size(YY(:,1:sw),2));
 neurFreq_counter = 0;
 time_array = zeros(10000,1);
-next_tme_targ = dt; %s
+next_time_targ = dt; %s
 segment = 0; % Initialize segment variable, keeps track of where in trial setup the monkey is
 tic;
 Keepgoing = 1;
 while Keepgoing
     curr_time =toc;
-    if (curr_time > next_tme_targ)
+    if (curr_time > next_time_targ)
         %Count the number of time steps
-        missed_bins = floor((curr_time - next_tme_targ)./dt);
+        missed_bins = floor((curr_time - next_time_targ)./dt);
         if missed_bins>-1
-        next_targ = next_targ + (missed_bins+1)*time_step;  %The next time target calculated, always in whole time steps
+        next_time_targ = next_time_targ + (missed_bins+1)*dt;  %The next time target calculated, always in whole time steps
         end
         
         %For debugging
