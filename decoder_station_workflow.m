@@ -64,7 +64,7 @@ while Keepgoing
         missed_bins = floor((curr_time - next_time_targ)./dt);
         if missed_bins>-1
         next_time_targ = next_time_targ + (missed_bins+1)*dt;  %The next time target calculated, always in whole time steps
-        end
+        end 
         
         %For debugging
         if missed_bins>2
@@ -81,12 +81,12 @@ while Keepgoing
         %movement state classifier then feed in different KF parameters
         prior_P = A*P*A' + W;
         S = C*prior_P*C' + Q;%state
-        K(:,:,t) = prior_P*C'*inv(S);%gain
+        K(:,:,curr_time_idx) = prior_P*C'*inv(S);%gain
          %Update movement covariance matrix
-        P = (eye(size(A,1)) - K(:,:,t)*C)*prior_P;
+        P = (eye(size(A,1)) - K(:,:,curr_time_idx)*C)*prior_P;
         %Use current firing rates to estimate next movement
-        YY_error = YY(:,t) - C*predX(:,t-1);
-        predX(:,t) = predX(:,t-1) + K(:,:,t)*YY_error;%estimated position/velocity
+        YY_error = YY(:,curr_time_idx) - C*predX(:,curr_time_idx-1);
+        predX(:,curr_time_idx) = predX(:,curr_time_idx-1) + K(:,:,curr_time_idx)*YY_error;%estimated position/velocity
 
         %store score
         score_matrix(neurFreq_counter,:) = predX;
