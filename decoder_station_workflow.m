@@ -46,6 +46,7 @@ YY = [Y,YS];
 % decode in realtime-assuming KF training done
 load("KF_para_test.mat")
 sw=301;
+% SBP=YY;%[n t]
 predX = zeros(size(A,1), size(YY(:,1:sw),2));
 X_0(1:5,1) = XX(1:5,1);
 P=P_0;
@@ -53,43 +54,47 @@ predX(:,1) = X_0;
 K = zeros(size(W,1), size(Q,1), size(YY(:,1:sw),2));
 neurFreq_counter = 0;
 time_array = zeros(10000,1);
-next_tme_targ = dt; %s
+next_time_targ = dt; %s
 segment = 0; % Initialize segment variable, keeps track of where in trial setup the monkey is
 tic;
 Keepgoing = 1;
 while Keepgoing
     curr_time =toc;
-    if (curr_time > next_tme_targ)
+    if (curr_time > next_time_targ)
         %Count the number of time steps
-        missed_bins = floor((curr_time - next_tme_targ)./dt);
+        missed_bins = floor((curr_time - next_time_targ)./dt);
         if missed_bins>-1
-        next_targ = next_targ + (missed_bins+1)*time_step;  %The next time target calculated, always in whole time steps
-        end
+        next_time_targ = next_time_targ + (missed_bins+1)*dt;  %The next time target calculated, always in whole time steps
+        end 
         
         %For debugging
         if missed_bins>2
             display(num2str(segment))
         end
 %         rawNeuronFreqs = recieveSBP('read_.rec');
-%         neuronFreqs = (rawNeuronFreqs-unitMeans);
-        curr_time_idx = missed_bins;%this or 1,2,3...      
-        neuronFreqs = YY(:,curr_time_idx);
+%         neuronFreqs = (rawNeuronFreqs-unitMeans);%[n t]
+%         curr_time_idx = missed_bins;%this or 1,2,3...      
+        curr_time_idx = curr_time_idx+1;%for debug
+        neuronFreqs = YY(:,curr_time_idx);%will miss indexes between SBP reading/what is the time interval for SBP
         neurFreq_counter = neurFreq_counter+1;
         time_array(neurFreq_counter) = toc;
-        
+%         tic
         %calculate score - Calculate Kalman gain K
         %movement state classifier then feed in different KF parameters
         prior_P = A*P*A' + W;
         S = C*prior_P*C' + Q;%state
-        K(:,:,t) = prior_P*C'*inv(S);%gain
+        K(:,:,curr_time_idx) = prior_P*C'*inv(S);%gain
          %Update movement covariance matrix
-        P = (eye(size(A,1)) - K(:,:,t)*C)*prior_P;
+        P = (eye(size(A,1)) - K(:,:,curr_time_idx)*C)*prior_P;
         %Use current firing rates to estimate next movement
-        YY_error = YY(:,t) - C*predX(:,t-1);
-        predX(:,t) = predX(:,t-1) + K(:,:,t)*YY_error;%estimated position/velocity
-
+        YY_error = neuronFreqs - C*predX(:,curr_time_idx-1);
+        predX(:,curr_time_idx) = predX(:,curr_time_idx-1) + K(:,:,curr_time_idx)*YY_error;%estimated position/velocity
+%         toc
         %store score
-        score_matrix(neurFreq_counter,:) = predX;
+        score_matrix(neurFreq_counter,:) = predX(:,curr_time_idx);
+        %send UDP
+        predPos = predX(1:2,curr_time_idx);
+
     end
 end
 % output cursor position 
