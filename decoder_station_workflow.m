@@ -73,6 +73,10 @@ while Keepgoing
 %         rawNeuronFreqs = recieveSBP('read_.rec');
 %         neuronFreqs = (rawNeuronFreqs-unitMeans);
         curr_time_idx = missed_bins;%this or 1,2,3...      
+        
+        %continuous output/udpsend testing
+        curr_time_idx = randi(width(YY),1);
+
         neuronFreqs = YY(:,curr_time_idx);
         neurFreq_counter = neurFreq_counter+1;
         time_array(neurFreq_counter) = toc;
@@ -85,7 +89,7 @@ while Keepgoing
          %Update movement covariance matrix
         P = (eye(size(A,1)) - K(:,:,curr_time_idx)*C)*prior_P;
         %Use current firing rates to estimate next movement
-        YY_error = YY(:,curr_time_idx) - C*predX(:,curr_time_idx-1);
+        YY_error = neuronFreqs - C*predX(:,curr_time_idx-1);
         predX(:,curr_time_idx) = predX(:,curr_time_idx-1) + K(:,:,curr_time_idx)*YY_error;%estimated position/velocity
 
         %store score
