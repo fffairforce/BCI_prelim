@@ -106,7 +106,7 @@ data = read(u,u.NumBytesWritten,"uint8")
 
 %legacy version to test
 ipA = '10.31.75.212'; portA = 3030;
-ipB = '192.168.11.2';  portB = 3031;  % Modify these values to be those of your second computer.
+ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
 ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
 udpB = udp(ipB,portB,'LocalPort',portA);
