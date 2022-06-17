@@ -106,8 +106,8 @@ write(u,predPos,destinationAddress,destinationPort)
 data = read(u,u.NumBytesWritten,"uint8")
 
 %legacy version to test
-ipA = '10.31.75.212'; portA = 3030;
-ipB = '192.168.11.2';  portB = 3031;  % Modify these values to be those of your second computer.
+ipA = '10.31.75.9'; portA = 3030;
+ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
 ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
 % udpC = udp(ipA,portA,'LocalPort',portC);
@@ -127,7 +127,7 @@ fscanf(udpB)%working for lab P--> WL laptop
 
 % uBroadcaster = udpport("datagram")
 % uBroadcaster.EnableBroadcast = true;
-uReceiver1 = udpport("byte","LocalHost",ipA,"LocalPort",2020,"EnablePortSharing",true)
+uReceiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portA,"EnablePortSharing",true)
 % write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
 uReceiver1Count = uReceiver1.NumBytesAvailable
 data1 = read(uReceiver1,uReceiver1Count,"uint8")
