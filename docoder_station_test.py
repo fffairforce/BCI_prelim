@@ -1,6 +1,7 @@
 import numpy as np
 import time
 from scipy.io import loadmat, savemat
+import socket
 
 #calculate FR
 if __name__ == "__main__":
@@ -103,3 +104,14 @@ if __name__ == "__main__":
             # send UDP
             predPos = predX[0:2, curr_time_idx:curr_time_idx + 1]
 
+    # UDP receive in py
+    UDP_IP = "127.0.0.1"
+    UDP_PORT = 5005
+
+    sock = socket.socket(socket.AF_INET, # Internet
+                         socket.SOCK_DGRAM) # UDP
+    sock.bind((UDP_IP, UDP_PORT))
+
+    while True:
+        data, addr = sock.recvfrom(2048) # buffer size is 1024 bytes
+        print("received message: %s" % data)
