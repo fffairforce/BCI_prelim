@@ -75,7 +75,7 @@ while Keepgoing
         curr_time_idx = missed_bins;%this or 1,2,3...      
         
         %continuous output/udpsend testing
-        curr_time_idx = randi(width(YY),1);
+        curr_time_idx = randi(sw,1);
 
         neuronFreqs = YY(:,curr_time_idx);
         neurFreq_counter = neurFreq_counter+1;
@@ -93,43 +93,52 @@ while Keepgoing
         predX(:,curr_time_idx) = predX(:,curr_time_idx-1) + K(:,:,curr_time_idx)*YY_error;%estimated position/velocity
 
         %store score
-        score_matrix(neurFreq_counter,:) = predX;
+        score_matrix(neurFreq_counter,:) = predX(:,curr_time_idx);
+
+        predPos = predX(1:2,curr_time_idx);
+        write(uBroadcaster,predPos,"uint8",ipA,portA);%10.31.79.255 10.52.14.255
     end
 end
-% output cursor position 
-predPos = predX(1:2,1:10);predPos=reshape(predPos,[],1);
-destinationAddress = '10.52.14.13';
-destinationPort = 64713;
-u=udpport;
-write(u,predPos,destinationAddress,destinationPort)
-data = read(u,u.NumBytesWritten,"uint8")
-
+% % output cursor position 
+% predPos = predX(1:2,1:10);predPos=reshape(predPos,[],1);
+% destinationAddress = '10.52.14.13';
+% destinationPort = 64713;
+% u=udpport;
+% write(u,predPos,destinationAddress,destinationPort)
+% data = read(u,u.NumBytesWritten,"uint8")
+% 
 %legacy version to test
-ipA = '10.31.75.212'; portA = 3030;
+ipA = '10.31.75.149'; portA = 3030;
 ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
 ipC = '192.168.1.250'; portC = 3033;
-%%Create UDP Object
-udpB = udp(ipB,portB,'LocalPort',portA);
-% udpA = udp(ipA,portA,'LocalPort',portC);
-udpC = udp(ipA,portA,'LocalPort',portB);
+% %%Create UDP Object
+% udpB = udp(ipB,portB,'LocalPort',portA);
+% % udpA = udp(ipA,portA,'LocalPort',portC);
+% udpC = udp(ipA,portA,'LocalPort',portB);
+% 
+% %%Connect to UDP Object
+% fopen(udpB)
+% fopen(udpA)
+% fopen(udpC)
+% 
+% fprintf(udpC,'This is test message number one.')
+% fprintf(udpA,'This is test message number two.')
+% fprintf(udpB,'doremifasolatido')
+% fscanf(udpA)
+% fscanf(udpB)
+% fscanf(udpC)
 
-%%Connect to UDP Object
-fopen(udpB)
-fopen(udpA)
-fopen(udpC)
-
-fprintf(udpC,'This is test message number one.')
-fprintf(udpA,'This is test message number two.')
-fprintf(udpB,'doremifasolatido')
-fscanf(udpA)
-fscanf(udpB)
-fscanf(udpC)
-
-%use this version of udpport
-uBroadcaster = udpport("LocalHost",ipB,"LocalPort",portC)%
+%use this version of udpport-set portal before while loop?
+uBroadcaster = udpport("LocalHost",ipB,"LocalPort",portB)%
 uBroadcaster.EnableBroadcast = true;
-uReceiver1 = udpport("byte","LocalHost",ipB,"EnablePortSharing",true)%,"LocalPort",portC
-write(uBroadcaster,predPos,"uint8",ipA,2020);%10.31.79.255 10.52.14.255
+write(uBroadcaster,[5;5],"uint8",ipA,portA+1);%10.31.79.255 10.52.14.255 %B -> A
+write(uBroadcaster,[5;5],"uint8",ipB,portB+1);
+
+
+uReceiver1 = udpport("byte","LocalHost",ipB,"LocalPort",portB+1,"EnablePortSharing",true)%,"LocalPort",portC
 uReceiver1Count = uReceiver1.NumBytesAvailable
 data1 = read(uReceiver1,uReceiver1Count,"uint8")
 %% functions to use
+
+while Keepgoing
+    write(uBroadcaster,[0;0],"uint8",ipA,portA);%10.31.79.255 10.52.14.255
