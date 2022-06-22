@@ -106,30 +106,32 @@ write(u,predPos,destinationAddress,destinationPort)
 data = read(u,u.NumBytesWritten,"uint8")
 
 %legacy version to test
-ipA = '10.31.75.9'; portA = 3030;
+ipA = '10.31.75.149'; portA = 3030;
 ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
 ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
 % udpC = udp(ipA,portA,'LocalPort',portC);
 % udpA = udp(ipC,portC,'LocalPort',portA);
-udpB = udp(ipB,portB,'LocalPort',portA)
-%%Connect to UDP Object
-fopen(udpA)
-fopen(udpC)
-fopen(udpB)
-fprintf(udpA,'This is test message number one.')
-fprintf(udpA,'This is test message number two.')
-fprintf(udpB,'doremifasolatido')
-fscanf(udpA)
-fscanf(udpC)
-fscanf(udpB)%working for lab P--> WL laptop
+% udpB = udp(ipB,portB,'LocalPort',portA)
+% %%Connect to UDP Object
+% fopen(udpA)
+% fopen(udpC)
+% fopen(udpB)
+% fprintf(udpA,'This is test message number one.')
+% fprintf(udpA,'This is test message number two.')
+% fprintf(udpB,'doremifasolatido')
+% fscanf(udpA)
+% fscanf(udpC)
+% fscanf(udpB)%working for lab P--> WL laptop
 
 
-% uBroadcaster = udpport("datagram")
-% uBroadcaster.EnableBroadcast = true;
-uReceiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portA,"EnablePortSharing",true)
+uBroadcaster = udpport("LocalHost",ipA,"LocalPort",portA)
+uBroadcaster.EnableBroadcast = true;
+write(uBroadcaster,predPos,"double",ipA,portB)
+
+uReceiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portA+1,"EnablePortSharing",true)
 % write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
 uReceiver1Count = uReceiver1.NumBytesAvailable
-data1 = read(uReceiver1,uReceiver1Count,"uint8")
+data1 = read(uReceiver1,uReceiver1Count,"double")%B->A
 data1 = reshape(data1,2,[])
 %% functions to use
