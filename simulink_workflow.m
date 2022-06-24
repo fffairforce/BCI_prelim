@@ -49,3 +49,5 @@ outdata_PC1
 
 % KinArm station recieve data in PC3 
 % replace handpos in 'COTPerturb/PNDL_PerturbHandInTarget/Embedded MATLAB InsideTarget' with PredPos
+% dislink handfeedback block from Kinarm
+% start with no perturb
