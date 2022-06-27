@@ -34,20 +34,52 @@ YS = YS + 2*randn(size(YS));
 XX = [X,XS];
 YY = [Y,YS];
 
-input = YY(:,1);
-var = sim("SendUdp2Kinarm_new.slx");
-% send out UDP from PC1
+%input = YY(:,1);
+%% if test KinArm, input Pos data constently 
+Keepgoing = 1;
+tic
+%network config
+ipA = '10.31.75.185'; portA = 3030;
+ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
+%actual udp sending
+uBroadcaster = udpport("LocalHost",ipA,"LocalPort",portA);
+uBroadcaster.EnableBroadcast = true;
 
-% Decoder receive data in PC2
-% Note:set samplerate in 'SendUdp2Kinarm_new/UDP Receive' to meet inpput
-% samplerate
-outdata_PC1
+while Keepgoing
+    curr_time =toc;
+    if curr_time < length(XX)
+        curr_time_idx = ceil(curr_time);
+    else
+        curr_time_idx = ceil(mod(curr_time,length(XX)));
+    end
+    input = [XX(1,curr_time_idx),XX(2,curr_time_idx)];
+    var = sim("SendUdp2Kinarm_new.slx");
+    display(input)
+    % send out UDP from PC1
 
-% Decode position prepare PredPos
+    % Decoder receive data in PC2
+    % Note:set samplerate in 'SendUdp2Kinarm_new/UDP Receive' to meet inpput
+    % samplerate
+%     outdata_PC1
+    
+    % Decode position prepare PredPos
+    
+    % send out UDP from PC2
+    write(uBroadcaster,input,"double",ipA,portB)
+    
+    sendPos = outdata_PC1;
 
-% send out UDP from PC2
+    % KinArm station recieve data in PC3 
+    % replace handpos in 'COTPerturb/PNDL_PerturbHandInTarget/Embedded MATLAB InsideTarget' with PredPos
+    % dislink handfeedback block from Kinarm
+    % start with no perturbu
+    %actual udp recieving
+    %might add a sleep period for the udp to send over
+    Receiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portB,"EnablePortSharing",true);
+    % write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
+    Receiver1Count = Receiver1.NumBytesAvailable;
+    data1 = read(Receiver1,Receiver1Count,"double");%B->A
+    data1 = reshape(data1,2,[]);
+    print('data received!')
 
-% KinArm station recieve data in PC3 
-% replace handpos in 'COTPerturb/PNDL_PerturbHandInTarget/Embedded MATLAB InsideTarget' with PredPos
-% dislink handfeedback block from Kinarm
-% start with no perturb
+end
