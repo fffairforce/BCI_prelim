@@ -40,7 +40,39 @@ YS = YS + 2*randn(size(YS));
 XX = [X,XS];
 YY = [Y,YS];
 %Classifier
+% feature selection1 - LDA
+response = XX(6,:);
+MdlLinear = fitcdiscr(YY',XX(6,:),'DiscrimType','linear'); 
 
+rng(1)
+cvp=cvpartition(size(YY,2),'HoldOut',0.1);
+idxTrn=training(cvp);
+idxTest=test(cvp);
+tblTrn = array2table(YY(:,idxTrn)');
+tblTrn.Y = response(idxTrn)';
+tblTest = array2table(YY(:,idxTest)');
+tblTest.Y = response(idxTest)';
+Md1 = fitcdiscr(tblTrn,'Y');
+predLabel = predict(Md1,YY(:,idxTest)');
+confusionchart(response(idxTest),predLabel)
+% feature selection2 - SVM
+Md2 = fitcsvm(tblTrn,'Y');
+predLabel2 = predict(Md2,YY(:,idxTest)');
+confusionchart(response(idxTest),predLabel2)
+
+predictNew = predict(Md1,YY(:,800:1000)');
+%HMM-depennding on problem to be solve, or else linear classifier/svm would
+%be enough to classify movement type
+state_num = 2;
+%set hight initial tans matrix so that state is likely stay steady
+trans= [0.95,0.05;
+         0.05,0.95];
+emmis = rand(state_num,length(response));%unkown observation number for each input data(use LDA observations?)
+emmis = emmis./sum(emmis,state_num);
+%generate random sequence for hmm to start
+[seq,states] = hmmgenerate(length(MdlLinear.Y),trans,emmis); %need to take known Markov Model parameters
+[TRANS_hat, EMIS_hat, LL] = hmmtrain(seq, trans, emmis,'Algorithm','BaumWelch','maxiterations',50);
+estimatesStates = hmmviterbi(seq,trans,emmis);
 %training KF parameters
 
 % decode in realtime-assuming KF training done
