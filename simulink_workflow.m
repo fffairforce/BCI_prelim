@@ -39,11 +39,11 @@ YY = [Y,YS];
 Keepgoing = 1;
 tic
 %network config
-ipA = '10.31.75.185'; portA = 3030;
-ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
-%actual udp sending
-uBroadcaster = udpport("LocalHost",ipA,"LocalPort",portA);
-uBroadcaster.EnableBroadcast = true;
+% ipA = '10.31.75.185'; portA = 3030;
+% ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
+% %actual udp sending
+% uBroadcaster = udpport("LocalHost",ipA,"LocalPort",portA);
+% uBroadcaster.EnableBroadcast = true;
 
 while Keepgoing
     curr_time =toc;
@@ -75,11 +75,11 @@ while Keepgoing
     % start with no perturbu
     %actual udp recieving
     %might add a sleep period for the udp to send over
-    Receiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portB,"EnablePortSharing",true);
-    % write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
-    Receiver1Count = Receiver1.NumBytesAvailable;
-    data1 = read(Receiver1,Receiver1Count,"double");%B->A
-    data1 = reshape(data1,2,[]);
-    print('data received!')
+%     Receiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portB,"EnablePortSharing",true);
+%     % write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
+%     Receiver1Count = Receiver1.NumBytesAvailable;
+%     data1 = read(Receiver1,Receiver1Count,"double");%B->A
+%     data1 = reshape(data1,2,[]);
+%     print('data received!')
 
 end
