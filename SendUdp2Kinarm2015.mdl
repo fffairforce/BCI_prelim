@@ -1,0 +1,2130 @@
+Model {
+  Name			  "SendUdp2Kinarm2015"
+  Version		  8.5
+  SavedCharacterEncoding  "Big5"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "9.3"
+    NumModelReferences	    0
+    NumTestPointedSignals   4
+    TestPointedSignal {
+      SignalName	      "need to add decoder block"
+      FullBlockPath	      "SendUdp2Kinarm2015/UDP Receive"
+    }
+    TestPointedSignal {
+      SignalName	      ""
+      FullBlockPath	      "SendUdp2Kinarm2015/UDP Receive1"
+    }
+    TestPointedSignal {
+      SignalName	      ""
+      FullBlockPath	      "SendUdp2Kinarm2015/XPos(Sine Wave)"
+      LogSignal		      1
+      MaxPoints		      5000
+      Decimation	      2
+    }
+    TestPointedSignal {
+      SignalName	      ""
+      FullBlockPath	      "SendUdp2Kinarm2015/YPos(Cos Wave)"
+      LogSignal		      1
+      MaxPoints		      5000
+      Decimation	      2
+    }
+  }
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [170.0, 197.0, 2183.0, 1328.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[2129.0, 875.0]
+	ZoomFactor		[1.25]
+	Offset			[-389.75386360166243, -81.331182240924875]
+      }
+    }
+  }
+  Created		  "Sun May 20 18:16:37 2007"
+  Creator		  "The MathWorks, Inc."
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Willy Lee"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 11 01:49:55 2022"
+  RTWModifiedTimeStamp	  579404995
+  ModelVersionFormat	  "1.%<AutoIncrement:0>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  ShowLinearizationAnnotations on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    9
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "SendUdp2Kinarm2015"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "SendUdp2Kinarm2015"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  Object {
+    $PropName		    "InstrumentedSignals"
+    $ObjectID		    10
+    $ClassName		    "Simulink.HMI.InstrumentedSignals"
+    Array {
+      Type		      "Struct"
+      Dimension		      2
+      MATStruct {
+	UUID			"f5014ef6-ed13-440a-89a6-95650d806e60"
+	BlockPath_		"XPos(Sine Wave)"
+	SID_			"2"
+	SubPath_		""
+	OutputPortIndex_	[1.0]
+	LogicalPortIndex_	[0.0]
+	SignalName_		""
+	SubSysPath_		""
+	Decimation_		[1.0]
+	MaxPoints_		[0.0]
+	TargetBufferedStreaming_ [0.0]
+	DomainType_		""
+	Array {
+	  Type			  "Struct"
+	  Dimension		  1
+	  PropName		  "DomainParams_"
+	}
+      }
+      MATStruct {
+	UUID			"8ae03fb9-0c3c-47dc-a4fa-96c7710df77d"
+	BlockPath_		"YPos(Cos Wave)"
+	SID_			"9"
+	SubPath_		""
+	OutputPortIndex_	[1.0]
+	LogicalPortIndex_	[0.0]
+	SignalName_		""
+	SubSysPath_		""
+	Decimation_		[1.0]
+	MaxPoints_		[0.0]
+	TargetBufferedStreaming_ [0.0]
+	DomainType_		""
+	Array {
+	  Type			  "Struct"
+	  Dimension		  1
+	  PropName		  "DomainParams_"
+	}
+      }
+      PropName		      "Persistence"
+    }
+  }
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  off
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovSFcnEnable		  on
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  CovUseTimeInterval	  off
+  CovStartTime		  0
+  CovStopTime		  0
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      11
+      Version		      "1.15.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  12
+	  Version		  "1.15.0"
+	  Components		  []
+	  StartTime		  "0.0"
+	  StopTime		  "10"
+	  AbsTol		  "auto"
+	  FixedStep		  "0.1"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  SolverName		  ode45
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  Solver		  ode45
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  13
+	  Version		  "1.15.0"
+	  Components		  []
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  14
+	  Version		  "1.15.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    9
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "UseSpecifiedMinMax"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "EfficientTunableParamExpr"
+	    PropName		    "DisabledProps"
+	  }
+	  Components		  []
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseDivisionForNetSlopeComputation "off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  2147483647
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  15
+	  Version		  "1.15.0"
+	  Components		  []
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  FcnCallInpInsideContextMsg "EnableAllAsWarning"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  IntegerSaturationMsg	  "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  16
+	  Version		  "1.15.0"
+	  Components		  []
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  17
+	  Version		  "1.15.0"
+	  Components		  []
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  18
+	  Version		  "1.15.0"
+	  Components		  []
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  19
+	  Version		  "1.15.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    17
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    Cell		    "CodeStackProfiling"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  GenerateReport	  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      20
+	      Version		      "1.15.0"
+	      Array {
+		Type			"Cell"
+		Dimension		28
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertPolySpaceComments"
+		Cell			"MATLABFcnDesc"
+		Cell			"InternalIdentifier"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"BlockCommentType"
+		PropName		"DisabledProps"
+	      }
+	      Components	      []
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      21
+	      Version		      "1.15.0"
+	      Array {
+		Type			"Cell"
+		Dimension		20
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"GenerateAllocFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		Cell			"RemoveResetFunc"
+		Cell			"ExistingSharedCode"
+		Cell			"RemoveDisableFunc"
+		Cell			"PreserveStateflowLocalDataDimensions"
+		Cell			"ParenthesesLevel"
+		Cell			"ERTMultiwordTypeDef"
+		Cell			"MultiwordTypeDef"
+		PropName		"DisabledProps"
+	      }
+	      Components	      []
+	      TargetFcnLib	      "ansi_tfl_tmw_new.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    [ 715, 270, 1300, 845 ]
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    11
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    23
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "bar"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+    }
+    Block {
+      BlockType		      SignalGenerator
+      WaveForm		      "sine"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Frequency		      "1"
+      Units		      "Hertz"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SaveFormat	      "Array"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      off
+      NumInputs		      "1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Width
+      OutDataTypeMode	      "Choose intrinsic data type"
+      DataType		      "double"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      SampleTime	      "1"
+    }
+  }
+  System {
+    Name		    "SendUdp2Kinarm2015"
+    Location		    [170, 197, 2353, 1525]
+    Open		    off
+    ModelBrowserVisibility  off
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "125"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "81"
+    Block {
+      BlockType		      Reference
+      Name		      "Byte Packing"
+      SID		      "41"
+      Ports		      [1, 1]
+      Position		      [20, 116, 115, 164]
+      ZOrder		      618
+      LibraryVersion	      "4.0"
+      SourceBlock	      "slrealtimeutilitieslib/Byte Packing"
+      SourceType	      "slrealtimebytepacking"
+      MaskPackedDataType      "uint8"
+      MaskUnpackedDataTypes   "{'double'}"
+      MaskAlignment	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Byte Packing1"
+      SID		      "53"
+      Ports		      [1, 1]
+      Position		      [595, 401, 690, 449]
+      ZOrder		      639
+      LibraryVersion	      "4.0"
+      SourceBlock	      "slrealtimeutilitieslib/Byte Packing"
+      SourceType	      "slrealtimebytepacking"
+      MaskPackedDataType      "uint8"
+      MaskUnpackedDataTypes   "{'double'}"
+      MaskAlignment	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Byte Unpacking "
+      SID		      "45"
+      Ports		      [1, 1]
+      Position		      [105, 276, 200, 324]
+      ZOrder		      659
+      LibraryVersion	      "4.0"
+      SourceBlock	      "slrealtimeutilitieslib/Byte Unpacking"
+      SourceType	      "slreraltimebytepacking"
+      MaskUnpackedDataTypes   "{'double'}"
+      MaskUnpackedDataSizes   "{[1]}"
+      MaskAlignment	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Byte Unpacking 1"
+      SID		      "54"
+      Ports		      [1, 1]
+      Position		      [910, 366, 1005, 414]
+      ZOrder		      628
+      LibraryVersion	      "4.0"
+      SourceBlock	      "slrealtimeutilitieslib/Byte Unpacking"
+      SourceType	      "slreraltimebytepacking"
+      MaskUnpackedDataTypes   "{'double'}"
+      MaskUnpackedDataSizes   "{[1]}"
+      MaskAlignment	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "52"
+      Position		      [155, 155, 185, 185]
+      ZOrder		      626
+      Value		      "16"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      SID		      "62"
+      Ports		      [1, 2]
+      Position		      [860, 380, 865, 475]
+      ZOrder		      636
+      Outputs		      "2"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      SID		      "80"
+      Ports		      [1, 2]
+      Position		      [55, 275, 60, 370]
+      ZOrder		      658
+      Outputs		      "2"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "KinArm station Received data"
+      SID		      "26"
+      Ports		      [1]
+      Position		      [1285, 176, 1345, 224]
+      ZOrder		      12
+      Priority		      "4"
+      Commented		      "on"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','"
+      "','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Marker','o','MarkerSize',8)}},'Us"
+      "erDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Channel 1'}},'ShowContent',true,'Placement',1)},'Display"
+      "PropertyDefaults',struct('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','','MinYLimMag','0','MaxYLimMag','10'"
+      ",'LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0."
+      "686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6"
+      "23529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
+      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Sig"
+      "nalLabel>'),'DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),ex"
+      "tmgr.Configuration('Tools','Measurements',true,'Version','2022a')),'Version','2022a','Location',[1671 561 2450 8"
+      "99])"
+      NumInputPorts	      "1"
+      Floating		      off
+      Open		      off
+      TimeRange		      auto
+      TickLabels	      OneTimeTick
+      ShowLegends	      off
+      LimitDataPoints	      on
+      MaxDataPoints	      5000
+      SaveToWorkspace	      off
+      SaveName		      ScopeData1
+      YMin		      -1
+      YMax		      1
+      SampleInput	      off
+      SampleTime	      -1
+      ZoomMode		      on
+      Grid		      on
+      DataFormat	      StructureWithTime
+      Decimation	      1
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      "59"
+      Ports		      [2, 1]
+      Position		      [545, 322, 550, 533]
+      ZOrder		      633
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"serverSendData"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux3"
+      SID		      "78"
+      Ports		      [2, 1]
+      Position		      [-55, 137, -50, 228]
+      ZOrder		      656
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"serverSendData"
+      }
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "Signal\nGenerator"
+      SID		      "50"
+      Ports		      [0, 1]
+      Position		      [-265, 132, -210, 188]
+      ZOrder		      624
+      WaveForm		      "square"
+      Frequency		      "0.5"
+    }
+    Block {
+      BlockType		      SignalGenerator
+      Name		      "Signal\nGenerator1"
+      SID		      "76"
+      Ports		      [0, 1]
+      Position		      [180, 402, 235, 458]
+      ZOrder		      652
+      Commented		      "on"
+      WaveForm		      "square"
+      Frequency		      "0.5"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      SID		      "47"
+      Position		      [-15, 450, 5, 470]
+      ZOrder		      621
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      SID		      "63"
+      Position		      [910, 510, 930, 530]
+      ZOrder		      637
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      SID		      "65"
+      Position		      [1145, 510, 1165, 530]
+      ZOrder		      640
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      SID		      "75"
+      Position		      [910, 535, 930, 555]
+      ZOrder		      651
+      Commented		      "on"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      SID		      "81"
+      Position		      [115, 390, 135, 410]
+      ZOrder		      660
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Receive"
+      SID		      "3"
+      Ports		      [0, 1]
+      Position		      [420, 71, 530, 119]
+      ZOrder		      -3
+      Priority		      "3"
+      Commented		      "on"
+      LibraryVersion	      "3.0"
+      SourceBlock	      "instrumentlib/UDP Receive"
+      SourceType	      "UDP Receive"
+      Host		      "localhost"
+      Port		      "51000"
+      LocalPort		      "51001"
+      EnablePortSharing	      off
+      GetLatestData	      off
+      DataSize		      "[1 1]"
+      DataType		      "double"
+      ASCIIFormatting	      "%f,"
+      Terminator	      "LF"
+      ByteOrder		      "LittleEndian"
+      EnableBlockingMode      on
+      Timeout		      "5"
+      SampleTime	      "1"
+      LocalAddress	      "0.0.0.0"
+      Port {
+	PortNumber		1
+	Name			"need to add decoder block"
+	TestPoint		on
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Receive1"
+      SID		      "12"
+      Ports		      [0, 1]
+      Position		      [990, 71, 1100, 119]
+      ZOrder		      4
+      Priority		      "3"
+      Commented		      "on"
+      LibraryVersion	      "3.0"
+      SourceBlock	      "instrumentlib/UDP Receive"
+      SourceType	      "UDP Receive"
+      Host		      "localhost"
+      Port		      "51002"
+      LocalPort		      "51003"
+      EnablePortSharing	      on
+      GetLatestData	      off
+      DataSize		      "[1 1]"
+      DataType		      "double"
+      ASCIIFormatting	      "%f,"
+      Terminator	      "LF"
+      ByteOrder		      "BigEndian"
+      EnableBlockingMode      on
+      Timeout		      "5"
+      SampleTime	      "1"
+      LocalAddress	      "0.0.0.0"
+      Port {
+	PortNumber		1
+	TestPoint		on
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Receive2"
+      SID		      "39"
+      Ports		      [0, 2]
+      Position		      [-200, 303, -90, 392]
+      ZOrder		      613
+      LibraryVersion	      "5.11"
+      SourceBlock	      "slrealtimeiplib/UDP Receive"
+      SourceType	      "slrealtimeudpreceive"
+      useHostTargetConn	      on
+      ipAddress		      "10.10.10.10"
+      localPort		      "34"
+      rcvWidth		      "16"
+      rcvFmAny		      off
+      fmAddress		      "'10.10.10.10'"
+      sampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Receive3"
+      SID		      "66"
+      Ports		      [0, 1]
+      Position		      [650, 492, 780, 548]
+      ZOrder		      641
+      LibraryVersion	      "3.0"
+      SourceBlock	      "instrumentlib/UDP Receive"
+      SourceType	      "UDP Receive"
+      Host		      "0.0.0.0"
+      Port		      "8888"
+      LocalPort		      "9090"
+      EnablePortSharing	      off
+      GetLatestData	      off
+      DataSize		      "16"
+      DataType		      "uint8"
+      ASCIIFormatting	      "%f,"
+      Terminator	      "LF"
+      ByteOrder		      "BigEndian"
+      EnableBlockingMode      on
+      Timeout		      "10"
+      SampleTime	      "0.01"
+      LocalAddress	      "localhost"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Send"
+      SID		      "4"
+      Ports		      [1]
+      Position		      [215, 47, 325, 93]
+      ZOrder		      -4
+      Priority		      "2"
+      Commented		      "on"
+      LibraryVersion	      "3.0"
+      SourceBlock	      "instrumentlib/UDP Send"
+      SourceType	      "UDP Send"
+      Host		      "localhost"
+      Port		      "51001"
+      LocalPort		      "51000"
+      EnablePortSharing	      off
+      ByteOrder		      "LittleEndian"
+      OutputDatagramPacketSize "1000"
+      EnableBlockingMode      on
+      LocalAddress	      "0.0.0.0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Send1"
+      SID		      "38"
+      Ports		      [2]
+      Position		      [225, 124, 365, 186]
+      ZOrder		      612
+      LibraryVersion	      "5.11"
+      SourceBlock	      "slrealtimeiplib/UDP Send"
+      SourceType	      "slrealtimeudpsend"
+      useHostTargetConn	      off
+      toAddress		      "'10.10.10.10'"
+      toPort		      "34"
+      sampleTime	      "-1"
+      ipAddress		      0.0.0.0
+      localPort		      0
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Send2"
+      SID		      "13"
+      Ports		      [1]
+      Position		      [690, 197, 800, 243]
+      ZOrder		      5
+      Priority		      "2"
+      Commented		      "on"
+      LibraryVersion	      "3.0"
+      SourceBlock	      "instrumentlib/UDP Send"
+      SourceType	      "UDP Send"
+      Host		      "localhost"
+      Port		      "51003"
+      LocalPort		      "51002"
+      EnablePortSharing	      on
+      ByteOrder		      "BigEndian"
+      OutputDatagramPacketSize "512"
+      EnableBlockingMode      on
+      LocalAddress	      "0.0.0.0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Send3"
+      SID		      "67"
+      Ports		      [1]
+      Position		      [705, 277, 835, 333]
+      ZOrder		      642
+      LibraryVersion	      "3.0"
+      SourceBlock	      "instrumentlib/UDP Send"
+      SourceType	      "UDP Send"
+      Host		      "localhost"
+      Port		      "9090"
+      LocalPort		      "8888"
+      EnablePortSharing	      off
+      ByteOrder		      "BigEndian"
+      OutputDatagramPacketSize "16"
+      EnableBlockingMode      on
+      LocalAddress	      "0.0.0.0"
+    }
+    Block {
+      BlockType		      Width
+      Name		      "Width"
+      SID		      "44"
+      Position		      [-105, 195, -75, 225]
+      ZOrder		      655
+    }
+    Block {
+      BlockType		      Width
+      Name		      "Width1"
+      SID		      "64"
+      Position		      [470, 385, 500, 415]
+      ZOrder		      638
+    }
+    Block {
+      BlockType		      Width
+      Name		      "Width2"
+      SID		      "70"
+      Position		      [470, 485, 500, 515]
+      ZOrder		      645
+      Commented		      "on"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XCP UDP Configuration"
+      SID		      "51"
+      Ports		      []
+      Position		      [-265, -90, -155, -35]
+      ZOrder		      625
+      Priority		      "-100"
+      Commented		      "on"
+      LibraryVersion	      "4.14"
+      SourceBlock	      "xcpprotocollib/XCP Configuration"
+      SourceType	      "XCP UDP Configuration"
+      SlaveName		      "UDP_Config1"
+      SlaveID		      "1"
+      EnableSecurity	      off
+      EnableStatus	      off
+      SampleTime	      "-1"
+      HeaderErrDet	      on
+      CTRScheme		      "One counter for all CTOs and DTOs"
+      LocalAddress	      "auto"
+      LocalPort		      "auto"
+      DAQTimeout	      "Inf"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "XPos(Sine Wave)"
+      SID		      "2"
+      Ports		      [0, 1]
+      Position		      [15, 188, 60, 222]
+      ZOrder		      -2
+      Priority		      "1"
+      Commented		      "on"
+      SampleTime	      "0.1"
+      Port {
+	PortNumber		1
+	DataLogging		on
+      }
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "YPos(Cos Wave)"
+      SID		      "55"
+      Ports		      [0, 1]
+      Position		      [275, 353, 320, 387]
+      ZOrder		      629
+      Priority		      "1"
+      Phase		      "-0.5*pi"
+      Port {
+	PortNumber		1
+	DataLogging		on
+      }
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "YPos(sin Wave)"
+      SID		      "9"
+      Ports		      [0, 1]
+      Position		      [275, 433, 320, 467]
+      ZOrder		      1
+      Priority		      "1"
+      Commented		      "on"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      Name		      "Zero-Order\nHold"
+      SID		      "69"
+      Position		      [360, 355, 395, 385]
+      ZOrder		      644
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      Name		      "Zero-Order\nHold1"
+      SID		      "71"
+      Position		      [360, 435, 395, 465]
+      ZOrder		      646
+      Commented		      "on"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ZeroOrderHold
+      Name		      "Zero-Order\nHold2"
+      SID		      "77"
+      Position		      [-160, 145, -125, 175]
+      ZOrder		      653
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "check signal"
+      SID		      "24"
+      Ports		      [1]
+      Position		      [215, 226, 275, 274]
+      ZOrder		      11
+      Priority		      "4"
+      Commented		      "on"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','"
+      "','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
+      "es',1,'LineNames',{{'XPos(Sine Wave)'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('Min"
+      "YLimReal','-1','MaxYLimReal','1','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XG"
+      "rid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450980"
+      "3922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176470"
+      "5882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921"
+      "569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayContentCa"
+      "che',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','M"
+      "easurements',true,'Version','2022a')),'Version','2022a','Location',[62 737 841 1076],'VisibleAtModelOpen','on')"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "decoder workstation Received data"
+      SID		      "1"
+      Ports		      [1]
+      Position		      [565, 156, 625, 204]
+      ZOrder		      -1
+      Priority		      "4"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serial"
+      "izedDisplays',{struct('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','L"
+      "egendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686"
+      "274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235"
+      "29411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
+      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
+      "Label>','LinePropertiesCache',{{struct('Marker','o','MarkerSize',8)}},'UserDefinedChannelNames',{{}},'NumLines',"
+      "1,'LineNames',{{'need to add decoder block'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struc"
+      "t('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','of"
+      "f','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627"
+      "4509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41"
+      "1764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509"
+      "803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayCon"
+      "tentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Too"
+      "ls','Measurements',true,'Version','2022a')),'Version','2022a','Location',[1390 669 2249 1159])"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "decoder workstation Received data1"
+      SID		      "48"
+      Ports		      [1]
+      Position		      [295, 276, 355, 324]
+      ZOrder		      622
+      Priority		      "4"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.03278','MaxYLimReal','0.00927','Y"
+      "LabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.03278','LegendVisibility','off','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Marker','o"
+      "','MarkerSize',8)}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Byte Unpacking '}},'ShowContent',"
+      "true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.03278','MaxYLimReal','0.00927','YLabelRe"
+      "al','','MinYLimMag','0.00000','MaxYLimMag','0.03278','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMag"
+      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
+      "rder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921"
+      "56862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 "
+      "0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayContentCache',[]),extmgr.Configuration('"
+      "Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','20"
+      "22a')),'Version','2022a','Location',[1635 680 2494 1170])"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "decoder workstation Received data2"
+      SID		      "49"
+      Ports		      [1]
+      Position		      [20, -39, 80, 9]
+      ZOrder		      623
+      Priority		      "4"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','Y"
+      "LabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Marker','o"
+      "','MarkerSize',8)}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'serverSendData:1','serverSendData"
+      ":2'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.00000','MaxYLimReal'"
+      ",'1.00000','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'"
+      "YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862"
+      "74509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1"
+      "6078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058"
+      "8235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayContentCache',[]),ex"
+      "tmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements"
+      "',true,'Version','2022a')),'Version','2022a','Location',[36 702 895 1192])"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "decoder workstation Received data3"
+      SID		      "56"
+      Ports		      [1]
+      Position		      [1105, 366, 1165, 414]
+      ZOrder		      630
+      Priority		      "4"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','Y"
+      "LabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Marker','o"
+      "','MarkerSize',8)}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Byte Unpacking 1'}},'ShowContent'"
+      ",true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','YLabelR"
+      "eal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMa"
+      "gPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Color"
+      "Order',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392"
+      "156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1"
+      " 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayContentCache',[]),extmgr.Configuration("
+      "'Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2"
+      "022a')),'Version','2022a','Location',[1640 350 2499 840])"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "decoder workstation Received data4"
+      SID		      "57"
+      Ports		      [1]
+      Position		      [570, 281, 630, 329]
+      ZOrder		      631
+      Priority		      "4"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','Y"
+      "LabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Marker','o"
+      "','MarkerSize',8)}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Zero-Order Hold'}},'ShowContent',"
+      "true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','YLabelRe"
+      "al','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMag"
+      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
+      "rder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921"
+      "56862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 "
+      "0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayContentCache',[]),extmgr.Configuration('"
+      "Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','20"
+      "22a')),'Version','2022a','Location',[38 388 897 878])"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "decoder workstation Received data5"
+      SID		      "74"
+      Ports		      [1]
+      Position		      [1105, 436, 1165, 484]
+      ZOrder		      650
+      Priority		      "4"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configurati"
+      "on('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','Y"
+      "LabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Marker','o"
+      "','MarkerSize',8)}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Byte Unpacking 1'}},'ShowContent'"
+      ",true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','YLabelR"
+      "eal','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMa"
+      "gPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Color"
+      "Order',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392"
+      "156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1"
+      " 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'),'DisplayContentCache',[]),extmgr.Configuration("
+      "'Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2"
+      "022a')),'Version','2022a','Location',[1640 350 2499 840])"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "double to int16(or equivalent for udp sending"
+      SID		      "34"
+      Position		      [95, 48, 170, 82]
+      ZOrder		      20
+      Commented		      "on"
+      OutDataTypeStr	      "int8"
+      RndMeth		      "Ceiling"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "double to int16(or equivalent for udp sending1"
+      SID		      "35"
+      Position		      [585, 108, 660, 142]
+      ZOrder		      21
+      Commented		      "on"
+      OutDataTypeStr	      "double"
+      RndMeth		      "Ceiling"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "double to int16(or equivalent for udp sending2"
+      SID		      "36"
+      Position		      [560, 223, 635, 257]
+      ZOrder		      22
+      Commented		      "on"
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "double to int16(or equivalent for udp sending3"
+      SID		      "37"
+      Position		      [1150, 78, 1225, 112]
+      ZOrder		      23
+      Commented		      "on"
+      OutDataTypeStr	      "double"
+      RndMeth		      "Ceiling"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "input data"
+      SID		      "29"
+      Position		      [20, 50, 50, 80]
+      ZOrder		      15
+      Commented		      "on"
+      Value		      "input"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "y to workspace"
+      SID		      "30"
+      Ports		      [1]
+      Position		      [1300, 80, 1360, 110]
+      ZOrder		      16
+      Commented		      "on"
+      VariableName	      "outdata_PC2"
+      MaxDataPoints	      "inf"
+      Save2DSignal	      "2-D array (concatenate along first dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "y to workspace1"
+      SID		      "31"
+      Ports		      [1]
+      Position		      [740, 110, 800, 140]
+      ZOrder		      17
+      Commented		      "on"
+      VariableName	      "outdata_PC1"
+      MaxDataPoints	      "inf"
+      Save2DSignal	      "2-D array (concatenate along first dimension)"
+      FixptAsFi		      on
+      SampleTime	      "1"
+    }
+    Line {
+      ZOrder		      69
+      SrcBlock		      "XPos(Sine Wave)"
+      SrcPort		      1
+      Points		      [122, 0]
+      Branch {
+	ZOrder			101
+	Points			[0, -135]
+	DstBlock		"UDP Send"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			85
+	Points			[0, 45]
+	DstBlock		"check signal"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "need to add decoder block"
+      ZOrder		      2
+      Labels		      [1, 1]
+      SrcBlock		      "UDP Receive"
+      SrcPort		      1
+      Points		      [12, 0; 0, 30]
+      Branch {
+	ZOrder			86
+	DstBlock		"double to int16(or equivalent for udp sending1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			43
+	Points			[0, 55]
+	DstBlock		"decoder workstation Received data"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      50
+      SrcBlock		      "input data"
+      SrcPort		      1
+      DstBlock		      "double to int16(or equivalent for udp sending"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      35
+      SrcBlock		      "UDP Receive1"
+      SrcPort		      1
+      DstBlock		      "double to int16(or equivalent for udp sending3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      54
+      SrcBlock		      "double to int16(or equivalent for udp sending1"
+      SrcPort		      1
+      Points		      [9, 0]
+      Branch {
+	ZOrder			73
+	DstBlock		"y to workspace1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			71
+	Points			[0, 95]
+	DstBlock		"UDP Send2"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      57
+      SrcBlock		      "double to int16(or equivalent for udp sending3"
+      SrcPort		      1
+      Points		      [29, 0]
+      Branch {
+	ZOrder			67
+	Points			[0, 105]
+	DstBlock		"KinArm station Received data"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			66
+	DstBlock		"y to workspace"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      296
+      SrcBlock		      "UDP Receive2"
+      SrcPort		      2
+      Points		      [32, 0; 0, 90]
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      160
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "UDP Send1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      185
+      SrcBlock		      "Width1"
+      SrcPort		      1
+      Points		      [18, 0; 0, 80]
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      Name		      "serverSendData"
+      ZOrder		      191
+      Labels		      [0, 0]
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      Points		      [18, 0; 0, -5]
+      DstBlock		      "Byte Packing1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      173
+      SrcBlock		      "Byte Unpacking 1"
+      SrcPort		      1
+      Points		      [17, 0]
+      Branch {
+	ZOrder			197
+	Points			[0, 130]
+	DstBlock		"Terminator2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			196
+	DstBlock		"decoder workstation Received data3"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      202
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      Points		      [18, 0; 0, -15]
+      DstBlock		      "Byte Unpacking 1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      211
+      SrcBlock		      "Byte Packing1"
+      SrcPort		      1
+      Points		      [3, 0; 0, -120]
+      DstBlock		      "UDP Send3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      209
+      SrcBlock		      "UDP Receive3"
+      SrcPort		      1
+      Points		      [30, 0; 0, -90]
+      DstBlock		      "Demux"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      228
+      SrcBlock		      "YPos(Cos Wave)"
+      SrcPort		      1
+      DstBlock		      "Zero-Order\nHold"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      231
+      SrcBlock		      "Zero-Order\nHold"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	ZOrder			267
+	Points			[0, 5]
+	Branch {
+	  ZOrder		  234
+	  DstBlock		  "Mux2"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  237
+	  DstBlock		  "Width1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			238
+	Points			[0, -65]
+	DstBlock		"decoder workstation Received data4"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      244
+      SrcBlock		      "Width2"
+      SrcPort		      1
+      Points		      [40, 0]
+    }
+    Line {
+      ZOrder		      247
+      SrcBlock		      "YPos(sin Wave)"
+      SrcPort		      1
+      DstBlock		      "Zero-Order\nHold1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      248
+      SrcBlock		      "Zero-Order\nHold1"
+      SrcPort		      1
+      Points		      [39, 0]
+      Branch {
+	ZOrder			250
+	Points			[0, 50]
+	DstBlock		"Width2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			249
+	Points			[106, 0]
+      }
+    }
+    Line {
+      ZOrder		      263
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      Points		      [24, 0; 0, 70]
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      265
+      Points		      [865, 465; 13, 0; 0, 80]
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      272
+      SrcBlock		      "Signal\nGenerator"
+      SrcPort		      1
+      DstBlock		      "Zero-Order\nHold2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "serverSendData"
+      ZOrder		      291
+      Labels		      [0, 0]
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      Points		      [6, 0]
+      Branch {
+	ZOrder			305
+	Points			[21, 0; 0, -45]
+	DstBlock		"Byte Packing"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			294
+	Points			[0, -200]
+	DstBlock		"decoder workstation Received data2"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      285
+      SrcBlock		      "Width"
+      SrcPort		      1
+      DstBlock		      "Mux3"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      288
+      SrcBlock		      "Zero-Order\nHold2"
+      SrcPort		      1
+      Points		      [9, 0]
+      Branch {
+	ZOrder			290
+	Points			[0, 50]
+	DstBlock		"Width"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			289
+	DstBlock		"Mux3"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      292
+      SrcBlock		      "Byte Packing"
+      SrcPort		      1
+      DstBlock		      "UDP Send1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      300
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      DstBlock		      "Byte Unpacking "
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      301
+      SrcBlock		      "UDP Receive2"
+      SrcPort		      1
+      DstBlock		      "Demux1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      302
+      SrcBlock		      "Byte Unpacking "
+      SrcPort		      1
+      DstBlock		      "decoder workstation Received data1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      304
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      Points		      [19, 0; 0, 55]
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "22"
+      Name		      "This will be KinArm PC\n"
+      Position		      [974, 46, 1377, 258]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ForegroundColor	      "[0.901961, 0.901961, 1.000000]"
+      BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      984
+      FontSize		      12
+    }
+    Annotation {
+      SID		      "15"
+      Name		      "This will be trodes PC"
+      Position		      [0, 32, 357, 283]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ForegroundColor	      "[0.901961, 0.901961, 1.000000]"
+      BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      982
+      FontSize		      12
+    }
+    Annotation {
+      SID		      "14"
+      Name		      "This will be decoder PC"
+      Position		      [411, 43, 816, 274]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ForegroundColor	      "[0.901961, 0.901961, 1.000000]"
+      BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
+      DropShadow	      on
+      AnnotationType	      "area_annotation"
+      ZOrder		      983
+      FontSize		      12
+    }
+    Annotation {
+      SID		      "5"
+      Name		      "The UDP Send block is set to a higher priority than the \nUDP Receive block. This ensures that UDP "
+      "Send block runs before UDP Receive block."
+      Position		      [605, 4, 995, 30]
+      InternalMargins	      [0, 0, 0, 0]
+      BackgroundColor	      "cyan"
+      ZOrder		      -1
+    }
+    Annotation {
+      SID		      "7"
+      Name		      "Basic UDP Communication"
+      Position		      [605, -30, 787, -12]
+      InternalMargins	      [0, 0, 0, 0]
+      ZOrder		      -3
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}
