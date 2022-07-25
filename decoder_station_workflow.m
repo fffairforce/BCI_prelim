@@ -138,7 +138,7 @@ write(u,predPos,destinationAddress,destinationPort)
 data = read(u,u.NumBytesWritten,"uint8")
 
 %legacy version to test
-ipA = '10.31.75.149'; portA = 3030;
+ipA = '10.31.75.160'; portA = 3030;
 ipB = '10.52.14.10';  portB = 3031;  % Modify these values to be those of your second computer.
 ipC = '192.168.1.250'; portC = 3033;
 %%Create UDP Object
@@ -159,11 +159,12 @@ ipC = '192.168.1.250'; portC = 3033;
 
 uBroadcaster = udpport("LocalHost",ipA,"LocalPort",portA)
 uBroadcaster.EnableBroadcast = true;
-write(uBroadcaster,predPos,"double",ipA,portB)
+write(uBroadcaster,[0;5],"double",ipB,portB+1)
 
 uReceiver1 = udpport("byte","LocalHost",ipA,"LocalPort",portA+1,"EnablePortSharing",true)
 % write(uBroadcaster,1:5,"uint8","",2020);%10.31.79.255 10.52.14.255
 uReceiver1Count = uReceiver1.NumBytesAvailable
 data1 = read(uReceiver1,uReceiver1Count,"double")%B->A
+figure;stem(data1)
 data1 = reshape(data1,2,[])
 %% functions to use
