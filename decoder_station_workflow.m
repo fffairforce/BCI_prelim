@@ -167,4 +167,21 @@ uReceiver1Count = uReceiver1.NumBytesAvailable
 data1 = read(uReceiver1,uReceiver1Count,"double")%B->A
 figure;stem(data1)
 data1 = reshape(data1,2,[])
-%% functions to use
+%% data type test
+for t=1:dt:10
+    X=sind(t)
+end
+while 1
+
+for theta=1:360
+    X = double(sind(0:90));
+    Y = typecast(X,'uint8');
+    Z = typecast(Y,'double');
+end
+uBroadcaster = udpport("LocalHost",'127.0.0.1',"LocalPort",9090)
+uBroadcaster.EnableBroadcast = true;
+write(uBroadcaster,Y,"double",'127.0.0.1',25500)
+out = sim("test_UDPreciever_in_simulink");
+out.simout
+figure;plot(out.simout)
+end
