@@ -174,14 +174,22 @@ end
 while 1
 
 for theta=1:360
-    X = double(sind(0:90));
-    Y = typecast(X,'uint8');
+    X = double(sind(1:45));
+    Y = typecast( X,'uint8');
     Z = typecast(Y,'double');
 end
-uBroadcaster = udpport("LocalHost",'127.0.0.1',"LocalPort",9090)
-uBroadcaster.EnableBroadcast = true;
-write(uBroadcaster,Y,"double",'127.0.0.1',25500)
+% uBroadcaster = udpport("LocalHost",'127.0.0.1',"LocalPort",9090)
+% uBroadcaster.EnableBroadcast = true;
+% write(uBroadcaster,Y,"double",'127.0.0.1',25500)
+%legacy version(2015)
+UDP = udp('127.0.0.1',25500,"LocalHost",'127.0.0.2',"LocalPort",9091);
+fopen(UDP)
+fwrite(UDP,Y)
 out = sim("test_UDPreciever_in_simulink");
 out.simout
 figure;plot(out.simout)
 end
+
+UDP_R = udp('127.0.0.2',9091,"LocalHost",'127.0.0.1',"LocalPort",25500);
+fopen(UDP_R)
+fread(UDP)
